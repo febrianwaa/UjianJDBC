@@ -52,7 +52,7 @@ public class AbsensiController {
 	}
 	
 	public List<Absensi> getEnd_date (String end_date ){
-		String sql = "Select * from absensi where end_date = '"+end_date+"'";
+		String sql = "Select * from absensi where end_date LIKE '"+end_date+"%'";
 		List<Absensi> absensi = jdbc.query(sql, new AbsensiRowMapper());
 		return absensi;
 	}
